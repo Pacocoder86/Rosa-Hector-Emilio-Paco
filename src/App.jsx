@@ -24,14 +24,19 @@ import Music from './pages/Categoria/Subcategorias/Music'
 import Sports from './pages/Categoria/Subcategorias/Sports'
 import Tools from './pages/Categoria/Subcategorias/Tools'
 import Toys from './pages/Categoria/Subcategorias/Toys'
+import Login from './pages/Login/Login.jsx'
+import Signup from './pages/Signup/Signup'
+import Error404 from './pages/404Error/Error404'
 
-function App () {
+function App() {
   return (
     <>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/:id' element={<ProductDetail />} />
         <Route path='/categoria' element={<Categoria />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
         <Route path='/categoria/categoria/:kids' element={<Kids />} />
         <Route path='/categoria/categoria/:shoes' element={<Shoes />} />
         <Route path='/categoria/categoria/:automotive' element={<Automotive />} />
@@ -53,6 +58,7 @@ function App () {
         <Route path='/categoria/categoria/:sports' element={<Sports />} />
         <Route path='/categoria/categoria/:tools' element={<Tools />} />
         <Route path='/categoria/categoria/:toys' element={<Toys />} />
+        <Route path='*' element={<Error404 />} />
       </Routes>
       <Footer />
     </>

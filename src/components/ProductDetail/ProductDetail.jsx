@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import FadeLoader from 'react-spinners/FadeLoader'
 import axios from 'axios'
@@ -12,7 +12,8 @@ const ProductDetail = () => {
   const getProductos = async () => {
     const res = await axios.get('https://ecomerce-master.herokuapp.com/api/v1/item/')
     const filterProducto = res.data.filter((item) => item._id === id)[0]
-    console.log(filterProducto)
+    // filtrar por el id, cuando el id sea igual al id de link redenriza en la pozizion cero
+    console.log('filter', filterProducto)
     setProducto(filterProducto)
   }
 
@@ -31,6 +32,7 @@ const ProductDetail = () => {
     return (url.match(/^http[^\?]*.(jpg|jpeg|gif|png|tiff|bmp)(\?(.*))?$/gmi) !== null)
   }
   const { id } = useParams()
+  const navigate = useNavigate()
   return (
     <>
       <Header />
@@ -48,9 +50,19 @@ const ProductDetail = () => {
               <h3>{`Category: ${producto.category} `}</h3>
               <h4 className='product-description'>{`Description: ${producto.description} `}</h4>
               <h2>{`Price: $ ${producto.price} `}</h2>
-              <button className='btn btn-dark'>Buy now</button>
+              <div className='container-botones'>
+                <button className='btn btn-dark  boton-pdp'>Buy now</button>
+                <button
+                  className='btn btn-dark  boton-pdp'
+                  onClick={() => {
+                    navigate(-1)
+                  }}
+                >
+                  Back
+                </button>
+              </div>
             </div>
-            </div>}
+          </div>}
       </div>
     </>
   )

@@ -8,6 +8,15 @@
     width: 100%;
 }
 
+.form-text{
+  text-align: center;  
+}
+.logo-login{
+ border-radius: 50%;
+ height: auto;
+text-align: center;
+}
+
 .navbar {
     display: inline !important;
 }
@@ -108,7 +117,13 @@ h2:hover::after {
     font-weight: bold;
 }
 
-@media (max-width: 1400px){
+@media (max-width: 1800px){
+    .container {
+        max-width: 100%;
+    }
+    }
+
+/* @media (max-width: 1400px){
 .container{
     width: 100%;
 }
@@ -120,14 +135,18 @@ h2:hover::after {
 }
 }
 
+@media (min-width: 576px){
+.container {
+    width: 100%;
+}
+}
+
 @media (max-width: 480px){
 .container {
     width: 100%;
 }
 }
 
-
-
-
+ */
 
 
