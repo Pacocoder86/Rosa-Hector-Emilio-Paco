@@ -26,8 +26,6 @@ text-align: center;
     font-size: 18px;
     text-transform:uppercase;
     text-decoration: none;
-    margin: 50px;
-    padding: 20px;
 }
 
 h2{
@@ -93,9 +91,10 @@ h2:hover::after {
     width: 100%;
 }    
 .list-links{
+    align-items: center;
     display: flex;
     list-style: none;
-    padding: 20px;
+    padding: 40px;
 }
 .ai {
     background: linear-gradient(#29b6f6 , #64ffda);

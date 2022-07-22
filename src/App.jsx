@@ -27,6 +27,7 @@ import Toys from './pages/Categoria/Subcategorias/Toys'
 import Login from './pages/Login/Login.jsx'
 import Signup from './pages/Signup/Signup'
 import Error404 from './pages/404Error/Error404'
+import Logout from './pages/Logout/Logout'
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
         <Route path='/categoria/categoria/:tools' element={<Tools />} />
         <Route path='/categoria/categoria/:toys' element={<Toys />} />
         <Route path='*' element={<Error404 />} />
+        <Route path='logout' element={<Logout />} />
       </Routes>
       <Footer />
     </>
