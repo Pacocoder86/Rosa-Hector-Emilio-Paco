@@ -70,3 +70,11 @@ body{
     padding: 10px ;
     border-radius: 10px 10px;
  }
+
+ .error-img{
+  margin: 16px;
+ }
+ .error-text{
+  text-align: center;
+  margin-top: 16px;
+ }
