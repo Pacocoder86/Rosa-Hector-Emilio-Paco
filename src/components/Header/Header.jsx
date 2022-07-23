@@ -18,7 +18,7 @@ const Header = () => {
 
       <div className='header-container'>
         <div className='container'>
-          <h2>ENVÍO GRATIS en toda la tienda - Entregas de 1 a 3 días hábiles.</h2>
+          <h2>FREE SHIPPING - DELIVERYS BETWEEN 1 & 3 DAYS.</h2>
         </div>
         <div className='navbar is-primary'>
           <div className='navbar-brand'>
@@ -36,20 +36,20 @@ const Header = () => {
             <header>
               <nav>
                 <ul className='list-links'>
-                  <li className='nav-items'>
-                    <Link to='/'>Home</Link>
-                  </li>
-                  <li className='nav-items'>
-                    <Link to='/secret'>Secret</Link>
-                  </li>
                   {isAuth
                     ? (
                       <>
+                        <Link to='/home'>
+                          <li className='nav-items'>Home</li>
+                        </Link>
+                        <Link to='/secret'>
+                          <li className='nav-items'>Secret</li>
+                        </Link>
                         <Link to='/logout'>
                           <li className='nav-items'>Logout</li>
                         </Link>
                         <Link to='/categoria'>
-                          <li className='nav-items'>Categorias</li>
+                          <li className='nav-items'>Categories</li>
                         </Link>
                       </>
                     )

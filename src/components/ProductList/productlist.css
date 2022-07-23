@@ -38,7 +38,8 @@ body{
       border-radius: 5%;
       transition: 0.3s;
       width: 255px;
-      height: 420px;
+      height: 480px;
+      justify-content: space-around;
       text-align: center;
       padding: 16px;  
   }

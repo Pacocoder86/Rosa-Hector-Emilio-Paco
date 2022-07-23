@@ -32,13 +32,15 @@ import Error404 from './pages/404Error/Error404'
 import Logout from './pages/Logout/Logout'
 import Protected from './hoc/Protected'
 import Secret from './pages/Secret/Secret'
+import Inicio from './pages/Inicio/Inicio'
 
 function App() {
   const { isAuth } = useContext(AuthContext)
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Inicio />} />
+        <Route path='home' element={<Home />} />
         <Route path='/:id' element={<ProductDetail />} />
         <Route path='/categoria' element={<Categoria />} />
         <Route path='/login' element={<Login />} />
