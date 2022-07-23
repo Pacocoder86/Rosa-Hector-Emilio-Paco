@@ -3,11 +3,15 @@ import axios from 'axios'
 
 const ProductContext = createContext()
 
-function ProductoProvider (props) {
+function ProductoProvider(props) {
   const [producto, setProducto] = useState([])
   const [loading, setLoading] = useState(true)
   const [selectedProduct, setSelectedProduct] = useState({})
   const [buscador, setBuscador] = useState('')
+  const [currentPage, setCurrentPage] = useState(1)
+  const [productosPerPage, setProductosPerPage] = useState(20)
+
+
   const getProductos = async () => {
     const res = await axios.get('https://ecomerce-master.herokuapp.com/api/v1/item/')
     console.log('api', res.data)
@@ -20,13 +24,18 @@ function ProductoProvider (props) {
     }, [2000])
   }, [])
 
+  const indexOfLastPage = currentPage * productosPerPage
+  const indexOfFirstPage = indexOfLastPage - productosPerPage
+  const currentPost = producto.slice(indexOfFirstPage, indexOfLastPage)
+
   const value = {
     producto,
     selectedProduct,
     setSelectedProduct,
     loading,
     buscador,
-    setBuscador
+    setBuscador,
+    currentPost
   }
   return (
     <ProductContext.Provider value={value} {...props} />
