@@ -13,6 +13,7 @@ const ProductList = () => {
     // eslint-disable-next-line no-useless-escape
     return (url.match(/^http[^\?]*.(jpg|jpeg|gif|png|tiff|bmp)(\?(.*))?$/gmi) !== null)
   }
+
   return (
     <>
       <div className='main-container'>

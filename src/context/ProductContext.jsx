@@ -35,7 +35,8 @@ function ProductoProvider(props) {
     loading,
     buscador,
     setBuscador,
-    currentPost
+    currentPost,
+    productosPerPage
   }
   return (
     <ProductContext.Provider value={value} {...props} />
