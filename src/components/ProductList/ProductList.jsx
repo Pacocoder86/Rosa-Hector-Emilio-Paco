@@ -45,7 +45,11 @@ const ProductList = () => {
               </div>
             </div>
           ))}
-        <Paginacion productosPerPage={context.productosPerPage} totalProductos={context.producto.length} />
+        <Paginacion
+          productosPerPage={context.productosPerPage}
+          totalProductos={context.producto.length}
+          paginate={context.paginate}
+        />
       </div>
     </>
   )

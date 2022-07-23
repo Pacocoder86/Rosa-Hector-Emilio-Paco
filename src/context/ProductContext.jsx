@@ -9,8 +9,8 @@ function ProductoProvider(props) {
   const [selectedProduct, setSelectedProduct] = useState({})
   const [buscador, setBuscador] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
+  // eslint-disable-next-line no-unused-vars
   const [productosPerPage, setProductosPerPage] = useState(20)
-
 
   const getProductos = async () => {
     const res = await axios.get('https://ecomerce-master.herokuapp.com/api/v1/item/')
@@ -28,6 +28,8 @@ function ProductoProvider(props) {
   const indexOfFirstPage = indexOfLastPage - productosPerPage
   const currentPost = producto.slice(indexOfFirstPage, indexOfLastPage)
 
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
   const value = {
     producto,
     selectedProduct,
@@ -36,7 +38,8 @@ function ProductoProvider(props) {
     buscador,
     setBuscador,
     currentPost,
-    productosPerPage
+    productosPerPage,
+    paginate
   }
   return (
     <ProductContext.Provider value={value} {...props} />
