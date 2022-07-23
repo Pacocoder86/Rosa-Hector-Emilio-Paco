@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { AuthContext } from './context/AuthContext'
 import { Routes, Route } from 'react-router-dom'
 import ProductDetail from './components/ProductDetail/ProductDetail'
 import Categoria from './pages/Categoria/Categoria'
@@ -28,8 +30,11 @@ import Login from './pages/Login/Login.jsx'
 import Signup from './pages/Signup/Signup'
 import Error404 from './pages/404Error/Error404'
 import Logout from './pages/Logout/Logout'
+import Protected from './hoc/Protected'
+import Secret from './pages/Secret/Secret'
 
 function App() {
+  const { isAuth } = useContext(AuthContext)
   return (
     <>
       <Routes>
@@ -60,6 +65,14 @@ function App() {
         <Route path='/categoria/categoria/:tools' element={<Tools />} />
         <Route path='/categoria/categoria/:toys' element={<Toys />} />
         <Route path='*' element={<Error404 />} />
+        <Route
+          path='/secret'
+          element={
+            <Protected isLoggedIn={isAuth}>
+              <Secret />
+            </Protected>
+          }
+        />
         <Route path='logout' element={<Logout />} />
       </Routes>
       <Footer />

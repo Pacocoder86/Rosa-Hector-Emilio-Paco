@@ -40,14 +40,18 @@ const Header = () => {
                     <Link to='/'>Home</Link>
                   </li>
                   <li className='nav-items'>
-                    <Link to='/categoria'>Categorias
-                    </Link>
+                    <Link to='/secret'>Secret</Link>
                   </li>
                   {isAuth
                     ? (
-                      <Link to='/logout'>
-                        <li className='nav-items'>Logout</li>
-                      </Link>
+                      <>
+                        <Link to='/logout'>
+                          <li className='nav-items'>Logout</li>
+                        </Link>
+                        <Link to='/categoria'>
+                          <li className='nav-items'>Categorias</li>
+                        </Link>
+                      </>
                     )
                     : (
                       <>
