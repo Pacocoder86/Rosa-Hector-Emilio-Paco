@@ -3,6 +3,7 @@ import { useProductContext } from '../../context/ProductContext'
 import FadeLoader from 'react-spinners/FadeLoader'
 import './productlist.css'
 import Paginacion from '../Paginacion/Paginacion'
+import catamaran from '../../assets/img/catamaran.jpg'
 
 const ProductList = () => {
   const context = useProductContext()
@@ -16,6 +17,7 @@ const ProductList = () => {
 
   return (
     <>
+      <img className='d-block w-100' src={catamaran} alt='/' />
       <div className='main-container'>
         {context.loading
           ? <FadeLoader color='#000000' loading={context.loading} size={100} />

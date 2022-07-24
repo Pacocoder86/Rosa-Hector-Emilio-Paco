@@ -46,7 +46,7 @@ body{
   
   .card:hover {
       box-shadow: 0px 10px 10px 0px rgb(43, 39, 39);
-      background: linear-gradient(#29b6f6 , #64ffda);
+      background-color:#ffd54f;
       
   }
   

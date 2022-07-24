@@ -1,5 +1,5 @@
 .first-header{
-    background: linear-gradient(#29b6f6 , #64ffda);
+    background-color: #ffca28;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -110,7 +110,7 @@ h2:hover::after {
 }
 .list-links a:hover {
     color: black;
-    background:linear-gradient(#29b6f6 , #64ffda);
+    background-color:#ffecb3 ;
     padding: 20px;
     border-radius: 10px;
     font-weight: bold;
