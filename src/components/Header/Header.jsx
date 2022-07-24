@@ -17,7 +17,7 @@ const Header = () => {
     <>
 
       <div className='header-container'>
-        <div className='container'>
+        <div className='first-header'>
           <h2>FREE SHIPPING - DELIVERYS BETWEEN 1 & 3 DAYS.</h2>
         </div>
         <div className='navbar is-primary'>
@@ -45,11 +45,11 @@ const Header = () => {
                         <Link to='/secret'>
                           <li className='nav-items'>Secret</li>
                         </Link>
-                        <Link to='/logout'>
-                          <li className='nav-items'>Logout</li>
-                        </Link>
                         <Link to='/categoria'>
                           <li className='nav-items'>Categories</li>
+                        </Link>
+                        <Link to='/logout'>
+                          <li className='nav-items'>Logout</li>
                         </Link>
                       </>
                     )

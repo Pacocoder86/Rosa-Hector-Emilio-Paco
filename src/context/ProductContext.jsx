@@ -10,7 +10,7 @@ function ProductoProvider(props) {
   const [buscador, setBuscador] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
   // eslint-disable-next-line no-unused-vars
-  const [productosPerPage, setProductosPerPage] = useState(20)
+  const [productosPerPage, setProductosPerPage] = useState(40)
 
   const getProductos = async () => {
     const res = await axios.get('https://ecomerce-master.herokuapp.com/api/v1/item/')
