@@ -8,6 +8,15 @@ import './header.css'
 const Header = () => {
   const { isAuth } = useContext(AuthContext)
 
+  const value = useContext(useProductContext)
+  const [menu, setMenu] = value.menu
+
+  console.log(menu)
+
+  const toogleMenu = () => {
+    setMenu(!menu)
+  }
+
   const context = useProductContext()
   const handleSearch = (e) => {
     context.setBuscador(e.target.value)
@@ -51,6 +60,10 @@ const Header = () => {
                         <Link to='/logout'>
                           <li className='nav-items'>Logout</li>
                         </Link>
+                        <div className='cart' onClick={toogleMenu}>
+                          <box-icon name='cart' />
+                          <span className='item_total'>0</span>
+                        </div>
                       </>
                     )
                     : (
