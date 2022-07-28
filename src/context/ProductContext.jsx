@@ -12,9 +12,6 @@ function ProductoProvider(props) {
   // eslint-disable-next-line no-unused-vars
   const [productosPerPage, setProductosPerPage] = useState(40)
 
-  const [menu, setMenu] = useState(false)
-  const [carrito, setCarrito] = useState([])
-
   const getProductos = async () => {
     const res = await axios.get('https://ecomerce-master.herokuapp.com/api/v1/item/')
     console.log('api', res.data)
@@ -26,20 +23,6 @@ function ProductoProvider(props) {
       setLoading(false)
     }, [2000])
   }, [])
-
-  const addCarrito = (id) => {
-    const check = carrito.every(item => {
-      return item.id !== id
-    })
-    if (check) {
-      const data = producto.filter(producto => {
-        return producto.id === id
-      })
-      setCarrito([...carrito, ...data])
-    } else {
-      console.log('El producto se ha agregado al carrito')
-    }
-  }
 
   const indexOfLastPage = currentPage * productosPerPage
   const indexOfFirstPage = indexOfLastPage - productosPerPage
@@ -56,13 +39,8 @@ function ProductoProvider(props) {
     setBuscador,
     currentPost,
     productosPerPage,
-    paginate,
-    menu: [menu, setMenu],
-    addCarrito: addCarrito,
-    carrito: [carrito, setCarrito]
+    paginate
   }
-
-
   return (
     <ProductContext.Provider value={value} {...props} />
   )
